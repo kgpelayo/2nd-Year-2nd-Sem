@@ -125,4 +125,4 @@
 (display "Testing Count Factors:")
 (newline)
 (display "Count factors of 48 and 4 is:")
-(count-factors 48 4)
+(count-factors 4 48)
