@@ -11,7 +11,7 @@
 ;(facorial n)
 (define (factorial n)
   (if (= n 0)
-      1 ;
+      1 ; 
       (* n (factorial (- n 1))))) ;loop continues recursively until the
                        ;factorial reaches zero to terminate the process
 
@@ -35,8 +35,8 @@
 
 ;(t-ice n)
 (define (t-ice n)
-  (do ((x 1 (add1 x)))
-    ((> x n))
+  (do ((x 1 (add1 x))) ;adds 1 to continue checking numbers
+    ((> x n)) 
     (test x)));creates the loop to check the t-ice
 
 (display "TEST B: Testing T-Ice")
@@ -139,10 +139,10 @@
 
 ;Count-factors: Care of Satori
 (define (count-factors m n)
-  (let loop((n n) (acc 0))
-    (cond ((= n 1) acc)
-          ((= (remainder n m) 0) (loop (/ n m) (+ acc 1)))
-          (else (loop (- n 1) acc)))))
+  (let loop((n n) (acc 0)) ;creates the loop to check how many factors
+    (cond ((= n 1) acc) ;if it is equal to one, no changes to acc
+          ((= (remainder n m) 0) (loop (/ n m) (+ acc 1))) ;increments acc if no remainder
+          (else (loop (- n 1) acc))))) ;else continues loop, no changes to acc
 
 (display "TEST F: Testing Count Factors:")
 (newline)
