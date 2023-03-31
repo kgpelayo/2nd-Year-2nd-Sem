@@ -147,6 +147,6 @@
 
 (display "TEST F: Testing Count Factors:")
 (newline)
-(display "Count factors of 48 and 4 is:")
+(display "Count factors of 48 and 4 is: ")
 (count-factors 4 48) ; tests count factors of 48 and 4
 (display "Test Successful!")
