@@ -64,7 +64,7 @@
           (sum-primes-helper (+ num 1) (+ sum num))
           (sum-primes-helper (+ num 1) sum))))
 
-;Sets initial values of '1' and '0'
+;Sets initial values of 'num' and 'sum' to '1' and '0', respectively
 (define (Sumprimes n)
   (sum-primes-helper 1 0)) 
 
