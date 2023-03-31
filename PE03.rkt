@@ -42,7 +42,7 @@
 (display "TEST B: Testing T-Ice")
 (newline)
 (display "T-Ice of 8: ")
-(t-ice 8)
+(t-ice 8) ;tests t-ice 8
 (newline)
 (display "Test Successful!")
 (newline)
@@ -50,19 +50,20 @@
 
 ;Sum of Primes: Care of Meekah
 (define (is-prime num)
-  (define (iter i) ; iteration instances
+  (define (iter i) ; definition of the procedure "iter" which recursively iterates values of "i" from 2 to num/2
     (cond ((> i (/ num 2)) #t)
-          ((= (modulo num i) 0) #f)
+          ((= (modulo num i) 0) #f) ; i is a divisor of num (remainder is 0)
           (else (iter (+ i 1)))))
-  (if (= num 1) #f
-      (iter 2)))
+  (if (= num 1) #f ; if num = 1, iterate 2 ; if any input value of num is <= 1, #f is returned
+      (iter 2))) ; otherwise, "iter" is called with an initial value of 2
+      
 ;HELPER FUNCTION: Takes two argument 'num' and 'sum'
 (define (sum-primes-helper num sum)
-  (if (> num 100) ; executes while num > 100
+  (if (> num 100) ; recursively iterates over values of "num" from 1 to 100
       sum
       (if (is-prime num)
-          (sum-primes-helper (+ num 1) (+ sum num))
-          (sum-primes-helper (+ num 1) sum))))
+          (sum-primes-helper (+ num 1) (+ sum num)) ; if a number is not prime
+          (sum-primes-helper (+ num 1) sum)))) ; when "num" reaches num > 100 (e.g. 101)
 
 ;Sets initial values of 'num' and 'sum' to '1' and '0', respectively
 (define (Sumprimes n)
@@ -99,7 +100,7 @@
     (display opt)
     (display n)
     (display " is ")
-    (display result) ;Displays the solution to the operation performed
+    (display result) ;Displays the result to the operation performed with the hardcoded input values for m, n, and opt
     (newline)))
     (display "Test Successful!")
     (newline)
@@ -147,5 +148,5 @@
 (display "TEST F: Testing Count Factors:")
 (newline)
 (display "Count factors of 48 and 4 is:")
-(count-factors 4 48)
+(count-factors 4 48) ; tests count factors of 48 and 4
 (display "Test Successful!")
