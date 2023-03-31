@@ -117,10 +117,10 @@
 
 ;Count-factors: Care of Satori
 (define (count-factors m n)
-  (let loop((n n) (acc 0))
-    (cond ((= n 1) acc)
-          ((= (remainder n m) 0) (loop (/ n m) (+ acc 1)))
-          (else (loop (- n 1) acc)))))
+  (let loop((n n) (acc 0)) ;creates the loop to check how many factors
+    (cond ((= n 1) acc) ;stops the loop when it reaches to 1
+          ((= (remainder n m) 0) (loop (/ n m) (+ acc 1))) ;continuously divides while incrementing acc to show the count of factors
+          (else (loop (- n 1) acc))))) 
 
 (display "Testing Count Factors:")
 (newline)
