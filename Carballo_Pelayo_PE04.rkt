@@ -43,14 +43,13 @@
 (my-reverse1 '(11 99 66 22 88)) ; Calls my-reverse1 with specific 'lis' as an argument
 
 ; C. Reverse List 2
-(define (my-reverse2 lis) ; Defines a new function called 'my-reverse2' that takes a single argument 'lis'
-  (define (reverse-iter lis reversed) ; Defines an inner helper function 'reverse-iter' that takes 'lis' as the input list and 'reverse' as the list that will hold the reversed elements
-    (if (null? lis) ; Checks if lis is an empty list using 'null?'. 
-        reversed ; If it is, then the reversed list will be returned (and also because it has also processed all the elements in 'lis')
-        (reverse-iter (cdr lis) (cons (car lis) reversed)))) ; Otherwise, 'cdr' removes the first element from 'lis', takes it with 'car lis', and eventually adding it to the 'resersed' list through '(cons (car lis) reversed)'
-                                                             ; Calls 'reverse-helper' recursively without the first element of 'is' and a new list that has the first elements of 'lis' added to the front of 'reversed'
-                                                             ; Works like a Stack data structure (FILO)
-  (reverse-iter lis '())) ; Has the effect of starting the recursion and bulds the reversed list one element at a time
+(define (my-reverse2 lis) ; Defines a new function my-reverse1 that takes a single argument 'lis'
+  (if (null? lis) ; Checks if 'lis' is empty
+      '() ; If it is, it returns the empty list
+      (let ((reversed '())) ; Initialize an empty list to hold the reversed elements
+        (do ((lst lis (cdr lst))) ; Initialize a do loop with 'lst' holding 'lis' and iterating with 'cdr lst'
+            ((null? lst) reversed) ; Once the end of the list is reached, return the 'reversed' list
+          (set! reversed (cons (car lst) reversed)))))) ; Prepend the first element of 'lst' to the 'result' list using 'cons' and update the 'reversed' list with 'set!'
 
 (newline)
 (display "PART C: Reversing List 2")
