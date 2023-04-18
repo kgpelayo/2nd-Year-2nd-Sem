@@ -23,7 +23,7 @@
 (display "PART A: Sum of Numbers")
 (newline)
 (display "The Sum of the numbers (1 2 3 (4 5) 6 (7 (8) 9)) is ")
-                 ;v is included for the following input to be taken literally
+        ;v is included for the following input to be taken literally
 (my-sums '(1 2 3 (4 5) 6 (7 (8) 9)))
 (newline)
 
